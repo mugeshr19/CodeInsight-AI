@@ -1,16 +1,7 @@
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
-  const { isAuthenticated, logout, user } = useAuth();
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    logout();
-    navigate('/');
-  };
-
   return (
     <motion.nav 
       initial={{ y: -100 }}
@@ -28,37 +19,9 @@ const Navbar = () => {
         </Link>
         
         <div className="flex gap-2 items-center">
-          {isAuthenticated ? (
-            <>
-              <Link to="/dashboard" className="px-4 py-2 text-gray-300 hover:text-white hover:bg-slate-800 rounded-lg transition font-medium">
-                Dashboard
-              </Link>
-              <Link to="/analytics" className="px-4 py-2 text-gray-300 hover:text-white hover:bg-slate-800 rounded-lg transition font-medium">
-                Analytics
-              </Link>
-              <Link to="/profile" className="px-4 py-2 text-gray-300 hover:text-white hover:bg-slate-800 rounded-lg transition font-medium">
-                Profile
-              </Link>
-              <button 
-                onClick={handleLogout}
-                className="ml-2 px-5 py-2 bg-red-500/10 text-red-400 border border-red-500/30 rounded-lg hover:bg-red-500/20 transition font-medium"
-              >
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-              <Link to="/login" className="px-4 py-2 text-gray-300 hover:text-white transition font-medium">
-                Login
-              </Link>
-              <Link 
-                to="/register" 
-                className="px-5 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition font-medium shadow-lg shadow-indigo-500/30"
-              >
-                Get Started
-              </Link>
-            </>
-          )}
+          <Link to="/" className="px-4 py-2 text-gray-300 hover:text-white hover:bg-slate-800 rounded-lg transition font-medium">
+            Analyze Code
+          </Link>
         </div>
       </div>
     </motion.nav>
