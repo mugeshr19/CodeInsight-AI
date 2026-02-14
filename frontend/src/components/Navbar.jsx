@@ -20,7 +20,13 @@ const Navbar = () => {
         
         <div className="flex gap-2 items-center">
           <Link to="/" className="px-4 py-2 text-gray-300 hover:text-white hover:bg-slate-800 rounded-lg transition font-medium">
-            Analyze Code
+            Dashboard
+          </Link>
+          <Link to="/analytics" className="px-4 py-2 text-gray-300 hover:text-white hover:bg-slate-800 rounded-lg transition font-medium">
+            Analytics
+          </Link>
+          <Link to="/profile" className="px-4 py-2 text-gray-300 hover:text-white hover:bg-slate-800 rounded-lg transition font-medium">
+            Profile
           </Link>
         </div>
       </div>

@@ -13,4 +13,9 @@ export const analysisAPI = {
   analyzeCode: (data) => api.post('/analyze', data),
 };
 
+export const userAPI = {
+  getProfile: () => api.get('/user/profile'),
+  getSubmissions: (userId) => api.get(`/submissions/user/${userId}`),
+};
+
 export default api;
